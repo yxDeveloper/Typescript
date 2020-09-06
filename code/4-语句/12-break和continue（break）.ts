@@ -1,9 +1,9 @@
 /*
  * @Author: your name
  * @Date: 2020-09-04 17:59:24
- * @LastEditTime: 2020-09-06 18:44:53
- * @LastEditors: your name
- * @Description: In User Settings Edit
+ * @LastEditTime: 2020-09-06 18:45:37
+ * @LastEditors: Please set LastEditors
+ * @Description: break
  * @FilePath: \Typescript\code\4-语句\12-break和continue（break）.ts
  */
 // 买了 5 个包子，吃包子。 正在吃第n个包子
