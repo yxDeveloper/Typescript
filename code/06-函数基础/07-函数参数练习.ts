@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-04 17:59:27
- * @LastEditTime: 2020-09-06 19:28:38
+ * @LastEditTime: 2020-09-06 19:33:20
  * @LastEditors: Please set LastEditors
  * @Description: fnuction
  * @FilePath: \Typescript\code\06-函数基础\07-函数参数练习.ts
