@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 18:31:49
- * @LastEditTime: 2020-09-07 19:17:39
+ * @LastEditTime: 2020-09-07 19:28:18
  * @LastEditors: Please set LastEditors
  * @Description: TS笔记补充
  * @FilePath: \Typescript\code\TS补充.ts
@@ -117,3 +117,37 @@
 //     //  console.log('技术胖整形成了'+yangzib+'的样子')
 //  }
 //  zhengXing()
+
+// Array
+
+// let arr1:number[ ]     //声明一个数值类型的数组
+// let arr2:Array<string>  //声明一个字符串类型的数组
+// let arr3:Array<number>
+
+//定义一个空数组，数组容量为0
+// let arr1:number[] = [] 
+// //定义一个数组时，直接给数组赋值
+// let arr2:Array<number> = [1,2,3,4,5]
+// //定义数组 的同事给数组赋值
+// let arr3:Array<string> = ['jspang','技术胖','金三胖']
+// let arr4:Array<boolean> = [ true,false,false]
+
+// 需要注意的是，在TypeScript中指定数据类型的数组只能存储同一类型的数组元素。
+
+//报错！ 必须存储number类型的数据
+// let arr5:Array<number> = [1,2,true]
+
+// let arr1:number[] = new Array()
+// let ara2:number[] = new Array(1,2,3,4,5)
+// let arr3:Array<string> = new Array('jspang','技术胖','金三胖')
+// let arr4:Array<boolean> = new Array(true,false,false)
+
+// 元组
+let Tuple: [number,string,boolean] = [1,'str',true]
+
+// //声明一个元祖类型
+// let x : [string,number]
+// //正确的初始化
+// x = ['hello',10]
+// //错误的初始化方法
+// x = [10,'hello']
