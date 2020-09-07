@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 18:31:49
- * @LastEditTime: 2020-09-07 19:35:17
+ * @LastEditTime: 2020-09-07 19:37:26
  * @LastEditors: Please set LastEditors
  * @Description: TS笔记补充
  * @FilePath: \Typescript\code\TS补充.ts
@@ -154,16 +154,19 @@
 
 // 需要说明的是这两种声明字符串的方法没有什么不同。基本类型的字符串可以直接使用引用类型的属性和方法。
 
+// 获取字符串的长度
 // let jspang:string = '技术胖'
 // let jspanga:String = new String("jspang.com")
 // console.log(jspang.length)
 // console.log(jspanga.length)
 
+// 查找字符串
 // let something:string = "清早起来打开窗，心情美美的，我要出去找小姐姐，心情美美的。"
 // let xiaoJieJie:string = "小姐姐"
 // console.log(something.indexOf(xiaoJieJie))   //19
 
-let something:string = "清早起来打开窗，心情美美的，我要出去找小姐姐，心情美美的。"
-let xiaoJieJie:string = "小姐姐"
-console.log(something.substring(8))
-console.log(something.substring(8,14))
+// 截取字符串
+// let something:string = "清早起来打开窗，心情美美的，我要出去找小姐姐，心情美美的。"
+// let xiaoJieJie:string = "小姐姐"
+// console.log(something.substring(8))
+// console.log(something.substring(8,14))
