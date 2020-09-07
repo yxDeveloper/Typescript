@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 18:31:49
- * @LastEditTime: 2020-09-07 19:28:18
+ * @LastEditTime: 2020-09-07 19:32:03
  * @LastEditors: Please set LastEditors
  * @Description: TS笔记补充
  * @FilePath: \Typescript\code\TS补充.ts
@@ -143,7 +143,7 @@
 // let arr4:Array<boolean> = new Array(true,false,false)
 
 // 元组
-let Tuple: [number,string,boolean] = [1,'str',true]
+// let Tuple: [number,string,boolean] = [1,'str',true]
 
 // //声明一个元祖类型
 // let x : [string,number]
@@ -151,3 +151,10 @@ let Tuple: [number,string,boolean] = [1,'str',true]
 // x = ['hello',10]
 // //错误的初始化方法
 // x = [10,'hello']
+
+// 需要说明的是这两种声明字符串的方法没有什么不同。基本类型的字符串可以直接使用引用类型的属性和方法。
+
+let jspang:string = '技术胖'
+let jspanga:String = new String("jspang.com")
+console.log(jspang.length)
+console.log(jspanga.length)
