@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 18:31:49
- * @LastEditTime: 2020-09-07 20:33:07
+ * @LastEditTime: 2020-09-07 20:33:23
  * @LastEditors: Please set LastEditors
  * @Description: TS笔记补充
  * @FilePath: \Typescript\code\TS补充.ts
@@ -336,27 +336,27 @@ jspangObj.interest()
 
 // console.log(mySearch('高、富、帅、德','胖')) //false
 
-### 命名空间的使用
-当然命名空间就是解决这个问题的，命名空间，又称内部模块，被用于组织有些具有内在联系的特性和对象。我们来看一个例子：
+// ### 命名空间的使用
+// 当然命名空间就是解决这个问题的，命名空间，又称内部模块，被用于组织有些具有内在联系的特性和对象。我们来看一个例子：
 
-namespace shuaiGe{
-    export class Dehua{
-        public name:string = '刘德华'
-        talk(){
-            console.log('我是帅哥刘德华')
-        }
-    }
-}
+// namespace shuaiGe{
+//     export class Dehua{
+//         public name:string = '刘德华'
+//         talk(){
+//             console.log('我是帅哥刘德华')
+//         }
+//     }
+// }
 
-namespace bajie{
-    export class Dehua{
-        public name:string = '马德华'
-        talk(){
-            console.log('我是二师兄马德华')
-        }
-    }
-}
+// namespace bajie{
+//     export class Dehua{
+//         public name:string = '马德华'
+//         talk(){
+//             console.log('我是二师兄马德华')
+//         }
+//     }
+// }
 
-let dehua1:shuaiGe.Dehua   = new shuaiGe.Dehua()
-let dehua2:shuaiGe.Dehua   = new bajie.Dehua()
-dehua1.talk()
+// let dehua1:shuaiGe.Dehua   = new shuaiGe.Dehua()
+// let dehua2:shuaiGe.Dehua   = new bajie.Dehua()
+// dehua1.talk()
