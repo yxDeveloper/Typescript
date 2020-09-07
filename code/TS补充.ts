@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 18:31:49
- * @LastEditTime: 2020-09-07 20:33:23
+ * @LastEditTime: 2020-09-07 20:37:14
  * @LastEditors: Please set LastEditors
  * @Description: TS笔记补充
  * @FilePath: \Typescript\code\TS补充.ts
@@ -270,22 +270,22 @@
 // var man:Man = new Man()
 // man.sex='女'
 
-class Jspang{
-    public name:string
-    public age : number
-    public skill: string
-    constructor(name:string,age:number,skill:string){
-        this.name = name
-        this.age = age
-        this.skill = skill
-    }
-    public interest(){
-        console.log('找小姐姐')
-    }
-}
+// class Jspang{
+//     public name:string
+//     public age : number
+//     public skill: string
+//     constructor(name:string,age:number,skill:string){
+//         this.name = name
+//         this.age = age
+//         this.skill = skill
+//     }
+//     public interest(){
+//         console.log('找小姐姐')
+//     }
+// }
 
-let jspangObj:Jspang = new Jspang('技术胖',18,'web')
-jspangObj.interest()
+// let jspangObj:Jspang = new Jspang('技术胖',18,'web')
+// jspangObj.interest()
 
 // class JsShuai extends Jspang {
 //     public xingxiang:string = '帅气'
