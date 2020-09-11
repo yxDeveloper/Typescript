@@ -1,8 +1,8 @@
-let songs: string[] = ['五环之歌', '探清水河', '晴天']
+let songs1: string[] = ['五环之歌', '探清水河', '晴天']
 
 // length 属性：
-// console.log(songs.length)
+// console.log(songs1.length)
 
 // push 方法：
-let len: number = songs.push('痒')
-console.log(songs, len)
+let length1: number = songs1.push('痒')
+console.log(songs1, length1);
