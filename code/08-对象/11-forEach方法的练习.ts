@@ -13,8 +13,25 @@ let nums: Array<number> = [1,3,4,6,4,24,34,4]
 //     has = true
 //   }
 // })
+
+// 方法一：
+// let has: boolean = false
+// nums.forEach(function(item) {
+//   if(item > 30) {
+//     has = true
+//   }
+// })
+// 方法二：
 let has: boolean = nums.some(function(item){
   if(item > 40) return true
 })
+// 方法三(错误)：
+// let has = nums.findIndex(function(item) {
+//   if(item > 30) {
+//     return true
+//   }
+// })
+
+
 
 console.log(has)
