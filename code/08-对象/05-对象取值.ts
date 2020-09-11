@@ -1,9 +1,9 @@
 /*
  * @Author: your name
  * @Date: 2020-09-04 17:59:43
- * @LastEditTime: 2020-09-12 00:10:37
+ * @LastEditTime: 2020-09-12 00:14:17
  * @LastEditors: Please set LastEditors
- * @Description: Object type
+ * @Description: Object type pull get 
  * @FilePath: \Typescript\code\08-对象\05-对象取值.ts
  */
 
