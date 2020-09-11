@@ -1,23 +1,24 @@
 /*
  * @Author: your name
  * @Date: 2020-09-04 17:59:43
- * @LastEditTime: 2020-09-10 18:03:15
+ * @LastEditTime: 2020-09-12 00:10:37
  * @LastEditors: Please set LastEditors
  * @Description: Object type
  * @FilePath: \Typescript\code\08-对象\05-对象取值.ts
  */
+
 interface IUser {
   name: string
   height: number
   sing: () => void
 }
-
 // 创建对象
-let jay1: IUser = {
+let jay: IUser = {
   name: '周杰伦',
-  height: 175,
-  sing: function () {
-    console.log('故事的小黄花。。。')
+  height: 180,
+  sing: () => {
+    console.log('故事的小黄花。。。');
+    
   }
 }
 
@@ -28,4 +29,5 @@ console.log(jay.height)
 // 调用方法
 jay.sing()
 
-console.log('我叫', jay.name)
+console.log('我叫',jay.name);
+
