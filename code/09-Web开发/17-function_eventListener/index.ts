@@ -1,6 +1,5 @@
 // 给 btn 添加事件
 let btn = document.querySelector('#btn') as HTMLButtonElement
-
 // btn.addEventListener('click', function (event) {
 //   event.target
 // })
