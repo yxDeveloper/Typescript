@@ -15,11 +15,11 @@
 */
 let cells = document.querySelectorAll('.cell')
 // console.log(cells);
-cells.forEach(function(item,i) {
+cells.forEach(function(item) {
   let cell = item as HTMLDivElement
-  console.log(item)
+  // console.log(item)
   cell.addEventListener('click',function(event) {
-    console.log('click',event.target);
+    // console.log('click',event.target);
     let target = event.target as HTMLDivElement
     target.classList.add('x')
   })
