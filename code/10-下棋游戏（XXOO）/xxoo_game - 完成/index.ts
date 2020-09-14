@@ -91,9 +91,9 @@ function checkWin(player: Player): boolean {
 
     // 3 判断这 3 个单元格元素是否同时包含当前玩家的类名
     if (
-      hasClass(cells[item[0], player) &&
-      hasClass(cells[item[1], player) &&
-      hasClass(cells[item[2], player)
+      hasClass(cells[item[0]], player) &&
+      hasClass(cells[item[1]], player) &&
+      hasClass(cells[item[2]], player)
     ) {
       return true
     }
