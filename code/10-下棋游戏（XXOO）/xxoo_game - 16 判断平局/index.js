@@ -35,10 +35,11 @@ function clickCell(event) {
         // 因为游戏已经结束，所以，此处直接 return
         // 来刻意阻止后续代码执行
         return;
-    }
+    } // 5:54
     // console.log('获胜之后')
     // 判断平局
     if (steps === 9) {
+        console.log('平局');
         // 因为游戏已经结束，所以，此处直接 return
         // 来刻意阻止后续代码执行
         return;
