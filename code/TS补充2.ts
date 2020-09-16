@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-16 23:32:16
+ * @LastEditTime: 2020-09-16 23:36:10
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -30,4 +30,11 @@ const XiaoJieJie: string[] = ['1','2','true']
 // error: const XiaoJieJie: string[] = ['1','2',true]
 
 
-console.log(XiaoJieJie);
+// console.log(XiaoJieJie);
+
+// 类
+class Person {}
+const dajiao: Person = new Person
+// 这个意思就是dajiao必须是一个Person类对应的对象才可以。
+
+// 我们还可以定义一个函数类型，并确定返回值。代码如下：
