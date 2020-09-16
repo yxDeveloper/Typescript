@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 00:01:57
+ * @LastEditTime: 2020-09-17 00:03:32
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -66,3 +66,13 @@ function getTotal(one , two){
 
 const total = getTotal(1,2)
 console.log(total);
+/* 这种形式，就需要用到类型注释了，
+因为这里的one和two会显示为any类型。
+这时候如果你传字符串，你的业务逻辑就是错误的，
+所以你必须加一个类型注解，把上面的代码写成下面的样子。 */
+
+function getTotal1(one : number, two :number){
+    return one + two
+}
+
+const total1 = getTotal1(1,2)
