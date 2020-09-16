@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-16 23:58:19
+ * @LastEditTime: 2020-09-17 00:00:02
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -53,8 +53,18 @@ console.log(jianxiaojiejie('小张'))
 
 
 // 类型注解&类型断言
+
 // 不用写类型注解的例子：
 
 const one = 1;
 const two = 2;
 const three = one + two;
+
+// 再来看一个用写类型注解的例子：
+
+
+function getTotal(one , two){
+    return one + two
+}
+
+const total = getTotal(1,2)
