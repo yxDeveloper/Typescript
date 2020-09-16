@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 00:06:25
+ * @LastEditTime: 2020-09-17 00:13:53
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -88,3 +88,28 @@ const XiaoJieJie2 = {
 
 // 在写TypeScript代码的一个重要宗旨就是每个变量，每个对象的属性类型都应该是固定的，
 // 如果你推断就让它推断，推断不出来的时候你要进行注释。
+
+
+function getTotal2(one : number, two :number){
+    return one + two
+}
+
+const total11 = getTotal2(1,2)
+console.log(typeof(total11));
+
+// 这时候我们写的代码其实是有一个小坑的，就是我们并没有定义getTotal的返回值类型，
+// 虽然TypeScript可以自己推断出返回值是number类型。 但是如果这时候我们的代码写错了，比如写程了下面这个样子。
+
+function getTotal3(one : number, two :number){
+    return one + two+ ''
+}
+
+const total12 = getTotal3(1,2)
+console.log(total12);
+console.log(typeof(total12));
+
+
+// // 这时候total的值就不是number类型了，但是不会报错。有的小伙伴这时候可能会说，
+// // 可以直接给total一个类型注解，比如写成这个样子。
+
+const total13 : number =getTotal3(1,2) //报错
