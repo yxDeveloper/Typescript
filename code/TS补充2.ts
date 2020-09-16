@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 00:48:49
+ * @LastEditTime: 2020-09-17 00:55:46
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -211,9 +211,9 @@ let arr1: (string | number)[] = ['', 2, '']
 // 真实的项目中数组中一定会有对象的出现。那对于这类带有对象的数组定义就稍微麻烦点了。 
 // 比如现在我们要定义一个有很多小姐姐的数组，每一个小姐姐都是一个对象。这是的定义就编程了这样。
 
-const xiaoJieJies : {name:string , age:Number}[] = [
-    {name:'刘英',age:18},
-    {name:'谢大脚',age:28}
+const xiaoJieJies: { name: string, age: Number }[] = [
+    { name: '刘英', age: 18 },
+    { name: '谢大脚', age: 28 }
 ]
 
 // let xiaojiejiess: {name: string,age: number}[] = [
@@ -223,3 +223,11 @@ const xiaoJieJies : {name:string , age:Number}[] = [
 // 这种形式看起来比较麻烦，而且如果有同样类型的数组，写代码也比较麻烦，TypeScript为我们准备了一个概念，叫做类型别名(type alias)。
 
 // 比如刚才的代码，就可以定义一个类型别名，定义别名的时候要以type关键字开始。现在定义一个Lady的别名。
+// type  Lady  =  {name:string , age:Number};
+// 有了这样的类型别名以后哦，就可以把上面的代码改为下面的形式了。
+type Lady = { name: string, age: number }
+
+const dashen: Lady[] = [
+    { name: '老王', age: 34 },
+    { name: '老张', age: 45 }
+]
