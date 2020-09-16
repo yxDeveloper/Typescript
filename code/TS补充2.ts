@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 00:59:31
+ * @LastEditTime: 2020-09-17 01:03:15
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -248,7 +248,25 @@ class Madam1 {
 //     age: number
 // }
 
-const xiaoJieJiesss : Madam[] = [
+const xiaoJieJiesss : Madam1[] = [
     {name:'刘英',age:18},
     {name:'谢大脚',age:28}
 ]
+
+/* TypeScript中提供了元组的概念，这个概念是JavaScript中没有的。
+但是不要慌张，其实元组在开发中并不常用，也可能是我的经历还不够。
+一般只在数据源是CSV这种文件的时候，会使用元组。其实你可以把元组
+看成数组的一个加强，它可以更好的控制或者说规范里边的类型。 */
+// const xiaojiejie  = ['dajiao','teacher',28]
+
+// 我们先来看一个数组和这个数组注解的缺点，比如我们有一个小姐姐数组，数组中有姓名、职业和年龄，代码如下：
+
+const xiaojiejie3  = ['dajiao','teacher',28]
+// 这时候把鼠标放到xiaojiejie变量上面，可以看出推断出来的类型。我们就用类型注解的形式给他作一个注解，代码如下：
+
+const xiaojiejie4 :(string | number)[]  = ['dajiao','teacher',28]
+// 这时候你已经增加了代码注解，但是这并不能很好的限制，比如我们把代码改成下面的样子，TypeScript依然不会报错。
+
+
+const xiaojiejie5 :(string | number)[]  = ['dajiao',28,'teacher']
+// 我们只是简单的把数组中的位置调换了一下，但是TypeScript并不能发现问题，这时候我们需要一个更强大的类型，来解决这个问题，这就是元组。
