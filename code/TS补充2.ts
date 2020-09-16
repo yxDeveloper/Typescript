@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 00:22:07
+ * @LastEditTime: 2020-09-17 00:37:37
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -152,3 +152,47 @@ function forNever(): never {
     while (true) { }
     console.log('Hello JSPang')
 }
+// throw new Error
+
+// 这个坑有很多小伙伴掉下去过，就是当一个函数的参数是对象时，我们如何定义参数对象的属性类型。我先写个一般javaScript的写法。
+
+ function add ({one , two}){
+     return one + two
+ }
+
+ const total21 = add({one:1,two:2})   //报错
+// 在浏览器中你会看到直接报错了，意思是total有可能会是任何类型，那我们要如何给这样的参数加类型注解那？最初你可能会这样写。
+
+// function add1 ({one :number , two :number}){
+//     return one + two
+// }  //报错
+
+// const total22 = add1({one:1,two:2})
+// console.log(total22);
+
+// 你在编辑器中会看到这种写法是完全错误的。那正确的写法应该是这样的
+function add3 ({one , two } : {one:number, two:number}) :number{
+    return one + two
+}
+
+const three1 = add3({one:1,two:2})
+// console.log(three1);
+
+// function add4 ({one, two}: {one: number,two: number}): number {
+//     return one + two
+// }
+
+// 如果参数是对象，并且里边只有一个属性时，我们更容易写错。 错误代码如下：
+
+// function getNumber ({one }:number){
+//      return one;
+//  }
+
+//  const one = getNumber({one:1})
+// 看着好像没什么问题，但实际这是有问题的，正确的代码应该时这样的。
+
+ function getNumber ({one } :{one:number}) :number{
+     return one;
+ }
+
+ const one1 = getNumber({one:1})
