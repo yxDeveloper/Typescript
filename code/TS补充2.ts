@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-16 23:43:46
+ * @LastEditTime: 2020-09-16 23:58:19
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -50,3 +50,11 @@ console.log(jianxiaojiejie('小张'))
 类类型
 函数类型 */
 // 这几种形式我们在TypeScript里叫做对象类型。
+
+
+// 类型注解&类型断言
+// 不用写类型注解的例子：
+
+const one = 1;
+const two = 2;
+const three = one + two;
