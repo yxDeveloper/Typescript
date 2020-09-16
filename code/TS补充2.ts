@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 00:55:46
+ * @LastEditTime: 2020-09-17 00:59:31
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -230,4 +230,25 @@ type Lady = { name: string, age: number }
 const dashen: Lady[] = [
     { name: '老王', age: 34 },
     { name: '老张', age: 45 }
+]
+// 这样定义是完全起作用的，比如我们下面在对象里再加入一个属性，这时候编译器就会直接给我们报错了。
+// const dashen: Lady[] = [
+//     { name: '老王', age: 34 },
+//     { name: '老张', age: 45 ,lala:1}
+// ]
+
+// 这时候有的小伙伴就会问了，我用类进行定义可以吗？答案是可以的，比如我们定义一个Madam的类,然后用这个类来限制数组的类型也是可以的。
+
+class Madam1 {
+    name: string ;
+    age:number ;
+}
+// class Madam2 {
+//     name: string
+//     age: number
+// }
+
+const xiaoJieJiesss : Madam[] = [
+    {name:'刘英',age:18},
+    {name:'谢大脚',age:28}
 ]
