@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 00:42:11
+ * @LastEditTime: 2020-09-17 00:48:49
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -156,11 +156,11 @@ function forNever(): never {
 
 // 这个坑有很多小伙伴掉下去过，就是当一个函数的参数是对象时，我们如何定义参数对象的属性类型。我先写个一般javaScript的写法。
 
- function add ({one , two}){
-     return one + two
- }
+function add({ one, two }) {
+    return one + two
+}
 
- const total21 = add({one:1,two:2})   //报错
+const total21 = add({ one: 1, two: 2 })   //报错
 // 在浏览器中你会看到直接报错了，意思是total有可能会是任何类型，那我们要如何给这样的参数加类型注解那？最初你可能会这样写。
 
 // function add1 ({one :number , two :number}){
@@ -171,11 +171,11 @@ function forNever(): never {
 // console.log(total22);
 
 // 你在编辑器中会看到这种写法是完全错误的。那正确的写法应该是这样的
-function add3 ({one , two } : {one:number, two:number}) :number{
+function add3({ one, two }: { one: number, two: number }): number {
     return one + two
 }
 
-const three1 = add3({one:1,two:2})
+const three1 = add3({ one: 1, two: 2 })
 // console.log(three1);
 
 // function add4 ({one, two}: {one: number,two: number}): number {
@@ -191,13 +191,35 @@ const three1 = add3({one:1,two:2})
 //  const one = getNumber({one:1})
 // 看着好像没什么问题，但实际这是有问题的，正确的代码应该时这样的。
 
- function getNumber ({one } :{one:number}) :number{
-     return one;
- }
+function getNumber({ one }: { one: number }): number {
+    return one;
+}
 
- const one1 = getNumber({one:1})
+const one1 = getNumber({ one: 1 })
 //  function getNumber ({one}: {one: number}): number{}
 
 // 你可以定义任意类型的数组，比如是undefined。
 
-const undefinedArr : undefined[]=[undefined,undefined]
+const undefinedArr: undefined[] = [undefined, undefined]
+
+/* 这时候问题来了，如果数组中有多种类型，比如既有数字类型，又有字符串的时候。那我们要如何定义那。
+ 很简单，只要加个()，然后在里边加上|就可以了，具体看代码。 */
+
+const arr: (number | string)[] = [1, 'string', 2]
+let arr1: (string | number)[] = ['', 2, '']
+
+// 真实的项目中数组中一定会有对象的出现。那对于这类带有对象的数组定义就稍微麻烦点了。 
+// 比如现在我们要定义一个有很多小姐姐的数组，每一个小姐姐都是一个对象。这是的定义就编程了这样。
+
+const xiaoJieJies : {name:string , age:Number}[] = [
+    {name:'刘英',age:18},
+    {name:'谢大脚',age:28}
+]
+
+// let xiaojiejiess: {name: string,age: number}[] = [
+//     {name : '',age : 2},
+//     {name : '',age : 2}
+// ]
+// 这种形式看起来比较麻烦，而且如果有同样类型的数组，写代码也比较麻烦，TypeScript为我们准备了一个概念，叫做类型别名(type alias)。
+
+// 比如刚才的代码，就可以定义一个类型别名，定义别名的时候要以type关键字开始。现在定义一个Lady的别名。
