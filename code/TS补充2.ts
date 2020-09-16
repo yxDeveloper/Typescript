@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 01:32:04
+ * @LastEditTime: 2020-09-17 01:43:42
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -412,3 +412,46 @@ class XiaoJieJie42 implements Girl{
 }
 // class lala implements Girl
 // class lala implements Girl
+
+// 接口也可以用于继承的，比如你新写一个Teacher接口，继承于Girl接口。
+
+interface Teacher extends Girl{
+    teach() :string
+}
+// let lala: Teacher = {
+    
+// }   //报错
+
+// 比如这时候老板说了，只看Teacher级别的简历，那我们需要修改getResume()方法。
+
+const getResume5=( girl:Teacher)=>{
+    console.log(girl.name+'年龄是：'+girl.age)
+    console.log(girl.name+'胸围是：'+girl.bust)
+    girl.waistline && console.log(girl.name+'腰围是：'+girl.waistline)
+    girl.sex && console.log(girl.name+'性别是：'+girl.sex)
+}
+// 修改后，你就会发现下面我们调用getResume()方法的地方报错了,因为这时候传的值必须有Teach方法，
+
+// getResume(girl)
+// 修改girle对象，增加teach（）方法，这时候就不会报错了。
+
+const girl5={
+    name:'大脚',
+    age:18,
+    bust:94,
+    waistline:21,
+    sex:'女',
+    say(){
+        return '欢迎光临 ，红浪漫洗浴！！'
+    },
+    teach(){
+        return '我是一个老师'
+    }
+}
+const getResume6=( girl:Teacher)=>{
+    console.log(girl.name+'年龄是：'+girl.age)
+    console.log(girl.name+'胸围是：'+girl.bust)
+    girl.waistline && console.log(girl.name+'腰围是：'+girl.waistline)
+    girl.sex && console.log(girl.name+'性别是：'+girl.sex)
+}
+// getResume6(girl5)
