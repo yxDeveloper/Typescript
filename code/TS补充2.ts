@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 01:13:39
+ * @LastEditTime: 2020-09-17 01:27:15
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -240,17 +240,17 @@ const dashen: Lady[] = [
 // 这时候有的小伙伴就会问了，我用类进行定义可以吗？答案是可以的，比如我们定义一个Madam的类,然后用这个类来限制数组的类型也是可以的。
 
 class Madam1 {
-    name: string ;
-    age:number ;
+    name: string;
+    age: number;
 }
 // class Madam2 {
 //     name: string
 //     age: number
 // }
 
-const xiaoJieJiesss : Madam1[] = [
-    {name:'刘英',age:18},
-    {name:'谢大脚',age:28}
+const xiaoJieJiesss: Madam1[] = [
+    { name: '刘英', age: 18 },
+    { name: '谢大脚', age: 28 }
 ]
 
 /* TypeScript中提供了元组的概念，这个概念是JavaScript中没有的。
@@ -261,19 +261,19 @@ const xiaoJieJiesss : Madam1[] = [
 
 // 我们先来看一个数组和这个数组注解的缺点，比如我们有一个小姐姐数组，数组中有姓名、职业和年龄，代码如下：
 
-const xiaojiejie3  = ['dajiao','teacher',28]
+const xiaojiejie3 = ['dajiao', 'teacher', 28]
 // 这时候把鼠标放到xiaojiejie变量上面，可以看出推断出来的类型。我们就用类型注解的形式给他作一个注解，代码如下：
 
-const xiaojiejie4 :(string | number)[]  = ['dajiao','teacher',28]
+const xiaojiejie4: (string | number)[] = ['dajiao', 'teacher', 28]
 // 这时候你已经增加了代码注解，但是这并不能很好的限制，比如我们把代码改成下面的样子，TypeScript依然不会报错。
 
 
-const xiaojiejie5 :(string | number)[]  = ['dajiao',28,'teacher']
+const xiaojiejie5: (string | number)[] = ['dajiao', 28, 'teacher']
 // 我们只是简单的把数组中的位置调换了一下，但是TypeScript并不能发现问题，这时候我们需要一个更强大的类型，来解决这个问题，这就是元组。
 
 // 元组和数组类似，但是类型注解时会不一样。
 
-const xiaojiejie : [string,string ,number]  = ['dajiao','teacher',28]
+const xiaojiejie: [string, string, number] = ['dajiao', 'teacher', 28]
 // 这时候我们就把数组中的每个元素类型的位置给固定住了，这就叫做元组。
 
 /* 目前我的工作中不经常使用元组，因为如果要使用元组，完全可以使用对象的形式来代替，
@@ -285,10 +285,10 @@ const xiaojiejie : [string,string ,number]  = ['dajiao','teacher',28]
 'cuihua','teacher',25
 如果数据源得到的数据时这样的，你就可以使用元组了。 */
 
-const xiaojiejies:[string,string,number][]=[
-    ['dajiao','teacher',28],
-    ['liuying','teacher',18],
-    ['cuihua','teacher',25],
+const xiaojiejies: [string, string, number][] = [
+    ['dajiao', 'teacher', 28],
+    ['liuying', 'teacher', 18],
+    ['cuihua', 'teacher', 25],
 ]
 
 /* 接口和类型别名的区别
@@ -298,12 +298,80 @@ const xiaojiejies:[string,string,number][]=[
 
 比如我们的类型别名可以写出下面的代码： */
 
-    type Girl1= string
+type Girl1 = string
 // 但是接口就不能这样写，它必须代表的是一个对象，也就是说，你初始化girl的时候，必须写出下面的形式.
 
-const girl={
-    name:'大脚',
-    age:18,
-    bust:94
+const girl = {
+    name: '大脚',
+    age: 18,
+    bust: 94
 }
-// 接口非必选值得定义
+
+/* 比如这时候老板又有了新的要求，要求尽量能看到小姐姐的腰围，但是不作强制要求，
+就是可选值吗。那接口如何定义那？其实typeScript已经为我们准备好了相应的办法，
+就是在:号前加一个?
+
+比如把Girl的接口写成这样。 */
+
+interface Girl2 {
+    name: string;
+    age: number;
+    bust: number;
+    waistline?: number;
+}
+// 然后我们再修改一下getResume方法，写成这样。
+
+const getResume = (girl: Girl2) => {
+    console.log(girl.name + '年龄是：' + girl.age)
+    console.log(girl.name + '胸围是：' + girl.bust)
+    girl.waistline && console.log(girl.name + '腰围是：' + girl.waistline)
+}
+
+interface Girl3 {
+    name: string;
+    age: number;
+    bust: number;
+    waistline?: number;
+    [propname: string]: any
+}
+/* 这个的意思是，属性的名字是字符串类型，属性的值可以是任何类型。
+
+这时候我们在对象里给一个性别,代码如下： */
+
+const girl2: Girl3 = {
+    name: '大脚',
+    age: 18,
+    bust: 94,
+    waistline: 21,
+    sex: '女'
+}
+// 再修改一下代码，这首就没有错误了。
+
+const getResume1=( girl:Girl3)=>{
+    console.log(girl.name+'年龄是：'+girl.age)
+    console.log(girl.name+'胸围是：'+girl.bust)
+    girl.waistline && console.log(girl.name+'腰围是：'+girl.waistline)
+    girl.sex && console.log(girl.name+'性别是：'+girl.sex)
+}
+getResume1(girl2)
+
+/* 接口里不仅可以存属性，还可以存方法，比如这时候有个say()方法，返回值是string类型。
+这时候你就不要再想成简历了，你需要更面向对象化的编程，想象成一个人。 */
+
+interface Girl4 {
+    name : string;
+    age  : number;
+    bust : number;
+    waistline ?: number;
+    [propname:string]:any;
+    say():string;
+    say1: (num1: number,num2: number) => number
+}
+// const girl3: Girl4 = {
+//     name: '大脚',
+//     age: 18,
+//     bust: 94,
+//     waistline: 21,
+//     sex: '女'
+// }    //报错
+// 加上这个say()方法后，程序马上就会报错，因为我们对象里没有say方法。那我们就要给对象一个say方法
