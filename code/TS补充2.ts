@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 00:03:32
+ * @LastEditTime: 2020-09-17 00:06:25
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -76,3 +76,15 @@ function getTotal1(one : number, two :number){
 }
 
 const total1 = getTotal1(1,2)
+/* 这里有的一个问题是，为什么total这个变量不需要加类型注解，
+因为当one和two两个变量加上注解后，TypeScript就可以自动通过类型推断，分析出变量的类型 */
+
+// 当然TypeScript也可以推断出对象中属性的类型，比如现在写一个小姐姐的对象，然后里边有两个属性。
+
+const XiaoJieJie2 = {
+    name:'刘英',
+    age:18
+}
+
+// 在写TypeScript代码的一个重要宗旨就是每个变量，每个对象的属性类型都应该是固定的，
+// 如果你推断就让它推断，推断不出来的时候你要进行注释。
