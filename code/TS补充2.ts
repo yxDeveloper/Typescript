@@ -1,11 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-16 23:40:56
+ * @LastEditTime: 2020-09-16 23:43:46
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
  */
+
+// 在TypeScript静态类型分为两种，一种是基础静态类型，一种是对象类型，这两种都经常使用，非常重要
 const jianXiaoJieJie : ()=> string =()=>{return '大脚'}
 
 const zhaXiaoJieJie: () => void = () => {}
@@ -40,3 +42,11 @@ const dajiao: Person = new Person
 // 我们还可以定义一个函数类型，并确定返回值。代码如下：
 let jianxiaojiejie: (name?: string) => string = (name = '小王') => `见到了小姐姐${name}`
 console.log(jianxiaojiejie('小张'))
+
+/* 那我们现在总结一下对象类型可以有几种形式：
+
+对象类型
+数组类型
+类类型
+函数类型 */
+// 这几种形式我们在TypeScript里叫做对象类型。
