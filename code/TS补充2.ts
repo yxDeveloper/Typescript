@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 00:00:02
+ * @LastEditTime: 2020-09-17 00:01:57
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -41,7 +41,7 @@ const dajiao: Person = new Person
 
 // 我们还可以定义一个函数类型，并确定返回值。代码如下：
 let jianxiaojiejie: (name?: string) => string = (name = '小王') => `见到了小姐姐${name}`
-console.log(jianxiaojiejie('小张'))
+// console.log(jianxiaojiejie('小张'))
 
 /* 那我们现在总结一下对象类型可以有几种形式：
 
@@ -55,16 +55,14 @@ console.log(jianxiaojiejie('小张'))
 // 类型注解&类型断言
 
 // 不用写类型注解的例子：
-
 const one = 1;
 const two = 2;
 const three = one + two;
 
 // 再来看一个用写类型注解的例子：
-
-
 function getTotal(one , two){
     return one + two
 }
 
 const total = getTotal(1,2)
+console.log(total);
