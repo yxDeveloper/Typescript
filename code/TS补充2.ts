@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 01:06:15
+ * @LastEditTime: 2020-09-17 01:13:39
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -290,3 +290,20 @@ const xiaojiejies:[string,string,number][]=[
     ['liuying','teacher',18],
     ['cuihua','teacher',25],
 ]
+
+/* 接口和类型别名的区别
+现在我们学了接口，也学过了类型别名，这两个语法和用处好像一样，我先表个态，确实用起来基本一样，但是也有少许的不同。
+
+类型别名可以直接给类型，比如string，而接口必须代表对象。
+
+比如我们的类型别名可以写出下面的代码： */
+
+    type Girl1= string
+// 但是接口就不能这样写，它必须代表的是一个对象，也就是说，你初始化girl的时候，必须写出下面的形式.
+
+const girl={
+    name:'大脚',
+    age:18,
+    bust:94
+}
+// 接口非必选值得定义
