@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 00:37:37
+ * @LastEditTime: 2020-09-17 00:42:11
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -196,3 +196,8 @@ const three1 = add3({one:1,two:2})
  }
 
  const one1 = getNumber({one:1})
+//  function getNumber ({one}: {one: number}): number{}
+
+// 你可以定义任意类型的数组，比如是undefined。
+
+const undefinedArr : undefined[]=[undefined,undefined]
