@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 01:47:04
+ * @LastEditTime: 2020-09-17 01:51:31
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -458,3 +458,5 @@ const getResume6=( girl:Teacher)=>{
 
 /* 学会了接口，你还需要明白一件事，就是接口只是对我们开发的约束，在生产环境中并没有体现。
 也可以说接口只是在TypeScript里帮我们作语法校验的工具，编译成正式的js代码，就不会有任何用处了。 */
+
+
