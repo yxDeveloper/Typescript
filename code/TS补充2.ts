@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-07 20:34:24
- * @LastEditTime: 2020-09-17 01:27:15
+ * @LastEditTime: 2020-09-17 01:32:04
  * @LastEditors: Please set LastEditors
  * @Description: TS补充
  * @FilePath: \Typescript\code\TS补充2.ts
@@ -375,3 +375,40 @@ interface Girl4 {
 //     sex: '女'
 // }    //报错
 // 加上这个say()方法后，程序马上就会报错，因为我们对象里没有say方法。那我们就要给对象一个say方法
+const girl4 = {
+    name:'大脚',
+    age:18,
+    bust:94,
+    waistline:21,
+    sex:'女',
+    say(){
+        return '欢迎光临 ，红浪漫洗浴！！'
+    }
+}
+
+// 我们都知道JavaScript从ES6里是有类这个概念的，类可以和接口很好的结合，我们先来看一个例子。下面的
+
+interface Girl {
+    name : string;
+    age  : number;
+    bust : number;
+    waistline ?: number;
+    [propname:string]:any;
+    say():string;
+    say1?: (num1: number,num2: number) => number
+}
+// class XiaoJieJie41 implements Girl{
+
+// }
+// 这时候类会直接报错，所以我们需要把这个类写的完全点。
+
+class XiaoJieJie42 implements Girl{
+    name="刘英"
+    age=18
+    bust=90
+    say(){
+        return '欢迎光临 ，红浪漫洗浴！！'
+    }
+}
+// class lala implements Girl
+// class lala implements Girl
